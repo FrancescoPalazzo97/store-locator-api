@@ -18,7 +18,7 @@ app.use(express.json());
 // Logging
 app.use(morgan(NODE_ENV === 'production' ? 'combined' : 'dev'));
 
-app.get('api/health', (req, res) => {
+app.get('/api/health', (req, res) => {
     res.json({
         success: true,
         data: {
