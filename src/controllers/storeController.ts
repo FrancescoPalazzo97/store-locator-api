@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { pool } from "../config/database.js";
+//import { pool } from "../config/database.js";
 import { storeQuerySchema, storeIdSchema } from "../schemas/store.schema.js";
 import type { Store, City, PaginatedResponse } from "../types/store.types.js";
 import { successHandler } from "../utils/successHandler.js";

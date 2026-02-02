@@ -5,6 +5,7 @@ import { testConnection } from './config/database.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import storeRoutes from './routes/storeRoutes.js';
+import healthRoutes from './routes/healthRoutes.js';
 
 //TODO 1: Dividere app da index
 //TODO 2: Creare config.env.ts per il .env
@@ -27,16 +28,7 @@ app.use(morgan(NODE_ENV === 'production' ? 'combined' : 'dev'));
 //TODO: fare apiRoutes
 app.use('/api/stores', storeRoutes);
 
-app.get('/api/health', (_req, res) => {
-    res.json({
-        success: true,
-        data: {
-            status: 'healthy',
-            timestamp: new Date().toISOString(),
-            environment: NODE_ENV
-        }
-    });
-});
+app.use('/api/health', healthRoutes);
 
 app.get('/', (_req, res) => {
     res.json({
