@@ -1,0 +1,17 @@
+# Dependencies
+node_modules
+
+# Build
+dist
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+.vscode
+
+data.*.csv
+
+claude.md 
+.claude
