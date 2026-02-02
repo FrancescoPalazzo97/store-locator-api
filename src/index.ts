@@ -3,6 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import { testConnection } from './config/database.js';
 import { errorHandler } from './middlewares/errorHandler.js';
+import { notFoundHandler } from './middlewares/notFoundHandler.js';
 
 //TODO 1: Dividere app da index
 //TODO 2: Creare config.env.ts per il .env
@@ -45,17 +46,7 @@ app.get('/', (_req, res) => {
     });
 });
 
-//! 404 | not found handler basico
-app.use((req, res) => {
-    res.status(404).json({
-        success: false,
-        error: {
-            code: 'NOT_FOUND',
-            message: `Route ${req.method} ${req.url} not found`
-        }
-    })
-})
-
+app.use(notFoundHandler);
 app.use(errorHandler);
 
 const startServer = async () => {

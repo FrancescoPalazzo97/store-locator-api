@@ -61,7 +61,9 @@ export function errorHandler(
         success: false,
         error: {
             code: 'INTERNAL_SERVER_ERROR',
-            message: 'Errore generico del server!'
+            message: process.env.NODE_ENV === 'production'
+                ? 'Errore generico del server!'
+                : err.message
         }
     };
 
