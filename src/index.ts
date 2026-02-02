@@ -1,4 +1,4 @@
-import express, { type NextFunction, type Request, type Response } from 'express';
+import express, { type Request, type Response } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 
@@ -18,7 +18,7 @@ app.use(express.json());
 // Logging
 app.use(morgan(NODE_ENV === 'production' ? 'combined' : 'dev'));
 
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (_req, res) => {
     res.json({
         success: true,
         data: {
@@ -29,7 +29,7 @@ app.get('/api/health', (req, res) => {
     });
 });
 
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
     res.json({
         message: 'Store locator API is running!!!',
         endpoints: {
@@ -53,7 +53,7 @@ app.use((req, res) => {
 })
 
 //! Error handler basico
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+app.use((err: Error, _req: Request, res: Response) => {
     console.error('Error:', err.message);
     res.status(500).json({
         success: false,
