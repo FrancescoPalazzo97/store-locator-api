@@ -1,8 +1,6 @@
-import express from 'express';
+import express, { type NextFunction, type Request, type Response } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-import { success } from 'zod';
-import { timeStamp } from 'node:console';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -43,6 +41,31 @@ app.get('/', (req, res) => {
     });
 });
 
+//! 404 | not found handler basico
+app.use((req, res) => {
+    res.status(404).json({
+        success: false,
+        error: {
+            code: 'NOT_FOUND',
+            message: `Route ${req.method} ${req.url} not found`
+        }
+    })
+})
+
+//! Error handler basico
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+    console.error('Error:', err.message);
+    res.status(500).json({
+        success: false,
+        error: {
+            code: 'INTERNAL_SERVER_ERROR',
+            message: NODE_ENV === 'production' ? 'Internal server error' : err.message
+        }
+    });
+});
+
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
+    console.log(`📝 Environment: ${NODE_ENV}`);
+    console.log(`🔗 CORS origin: ${CORS_ORIGIN}`);
 });
