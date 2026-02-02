@@ -1,6 +1,7 @@
 import express, { type Request, type Response } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
+import { testConnection } from './config/database.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -64,8 +65,18 @@ app.use((err: Error, _req: Request, res: Response) => {
     });
 });
 
-app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
-    console.log(`📝 Environment: ${NODE_ENV}`);
-    console.log(`🔗 CORS origin: ${CORS_ORIGIN}`);
-});
+const startServer = async () => {
+    const dbConnected = await testConnection();
+
+    if (!dbConnected) {
+        console.error('Database Non connesso!');
+    }
+
+    app.listen(PORT, () => {
+        console.log(`🚀 Server running on http://localhost:${PORT}`);
+        console.log(`📝 Environment: ${NODE_ENV}`);
+        console.log(`🔗 CORS origin: ${CORS_ORIGIN}`);
+    });
+}
+
+startServer();
