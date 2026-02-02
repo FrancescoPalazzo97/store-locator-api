@@ -3,6 +3,8 @@ import cors from 'cors';
 import morgan from 'morgan';
 import { testConnection } from './config/database.js';
 
+//TODO 1: Dividere app da index
+//TODO 2: Creare config.env.ts per il .env
 const app = express();
 const PORT = process.env.PORT || 3000;
 const NODE_ENV = process.env.NODE_ENV || 'development';
