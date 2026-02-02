@@ -1,7 +1,8 @@
-import express, { type Request, type Response } from 'express';
+import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import { testConnection } from './config/database.js';
+import { errorHandler } from './middlewares/errorHandler.js';
 
 //TODO 1: Dividere app da index
 //TODO 2: Creare config.env.ts per il .env
@@ -55,17 +56,7 @@ app.use((req, res) => {
     })
 })
 
-//! Error handler basico
-app.use((err: Error, _req: Request, res: Response) => {
-    console.error('Error:', err.message);
-    res.status(500).json({
-        success: false,
-        error: {
-            code: 'INTERNAL_SERVER_ERROR',
-            message: NODE_ENV === 'production' ? 'Internal server error' : err.message
-        }
-    });
-});
+app.use(errorHandler);
 
 const startServer = async () => {
     const dbConnected = await testConnection();
