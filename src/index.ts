@@ -5,13 +5,12 @@ import { testConnection } from './config/database.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import apiRoutes from './routes/apiRoutes.js';
+import { env } from './env.js';
 
 //TODO 1: Dividere app da index
 //TODO 2: Creare config.env.ts per il .env
 const app = express();
-const PORT = process.env.PORT || 3000;
-const NODE_ENV = process.env.NODE_ENV || 'development';
-const CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:5173';
+const { PORT, NODE_ENV, CORS_ORIGIN } = env;
 
 app.use(cors({
     origin: CORS_ORIGIN,

@@ -1,6 +1,7 @@
 import type { Request, Response } from "express";
+import { env } from "../env.js";
 
-const NODE_ENV = process.env.NODE_ENV || 'development';
+const { NODE_ENV } = env;
 
 export const getServerHealth = (_req: Request, res: Response): void => {
     res.json({

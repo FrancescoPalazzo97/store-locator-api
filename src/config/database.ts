@@ -1,11 +1,14 @@
 import mysql, { type Pool, type PoolOptions } from 'mysql2/promise';
+import { env } from '../env.js';
+
+const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME } = env;
 
 const poolConfig: PoolOptions = {
-    host: process.env.DB_HOST || 'localhost',
-    port: Number(process.env.DB_PORT) || 3306,
-    user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || 'Your_Password_Here!',
-    database: process.env.DB_NAME || 'store_locator',
+    host: DB_HOST,
+    port: DB_PORT,
+    user: DB_USER,
+    password: DB_PASSWORD,
+    database: DB_NAME,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
