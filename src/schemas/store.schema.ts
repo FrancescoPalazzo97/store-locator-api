@@ -36,15 +36,50 @@ export const storeIdSchema = z.object({
 });
 
 // Schema per validazione dati CSV durante import
+// Dal CSV parser arrivano tutte stringhe, quindi trasformiamo i tipi
 export const storeCsvRowSchema = z.object({
-    id: z.number().int().positive(),
-    nome: z.string().min(1, 'Nome è obbligatorio'),
-    indirizzo: z.string().min(1, 'Indirizzo è obbligatorio'),
-    città: z.string().min(1, 'Città è obbligatoria'),
-    latitudine: z.number().min(-90).max(90),
-    longitudine: z.number().min(-180).max(180),
-    telefono: z.string().nullable().optional(),
-    totem: z.boolean()
+    id: z.string({ error: 'ID mancante!' })
+        .transform((val) => parseInt(val, 10))
+        .refine((val) => Number.isInteger(val) && val > 0, {
+            error: 'ID deve essere un numero intero positivo!'
+        }),
+
+    nome: z.string({ error: 'Nome non valido!' })
+        .trim()
+        .min(1, { error: 'Nome mancante!' }),
+
+    indirizzo: z.string({ error: 'Indirizzo non valido!' })
+        .trim()
+        .min(1, { error: 'Indirizzo mancante!' }),
+
+    città: z.string({ error: 'Città non valida!' })
+        .trim()
+        .min(1, { error: 'Città mancante!' }),
+
+    latitudine: z.string({ error: 'Latitudine mancante!' })
+        .transform((val) => parseFloat(val))
+        .refine((val) => !isNaN(val) && val >= -90 && val <= 90, {
+            error: 'Latitudine deve essere un numero compreso tra -90 e 90'
+        }),
+
+    longitudine: z.string({ error: 'Longitudine mancante!' })
+        .transform((val) => parseFloat(val))
+        .refine((val) => !isNaN(val) && val >= -180 && val <= 180, {
+            error: 'Longitudine deve essere un numero compreso tra -180 e 180'
+        }),
+
+    telefono: z.string()
+        .trim()
+        .transform((val) => val === '' ? null : val)
+        .optional()
+        .default(''),
+
+    totem: z.string({ error: 'Totem mancante!' })
+        .trim()
+        .refine((val) => val === 'TRUE' || val === 'FALSE', {
+            error: 'Totem deve essere "TRUE" o "FALSE"'
+        })
+        .transform((val) => val === 'TRUE'),
 });
 
 // Types derivati dagli schemas

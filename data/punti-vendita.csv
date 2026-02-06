@@ -1,0 +1,61 @@
+id,nome,indirizzo,città,latitudine,longitudine,telefono,totem
+1,Red Signal,Corso Buenos Aires 33,Milano,45.4781,9.2056,0287654321,false
+2,EasySIM Point,Piazza Duca d'Aosta,Milano,45.4841,9.2043,,true
+3,TechLounge,Via Garibaldi 12,Torino,45.0735,7.6761,0112345678,false
+4,FastConnect Spot,Piazza XVIII Dicembre,Torino,45.0732,7.6695,,true
+5,Linea Libera,Via Roma 101,Roma,41.9009,12.4833,0645789123,false
+6,SelfSIM Hub,Piazza dei Cinquecento,Roma,41.9015,12.5012,,true
+7,Digital Bay,Via Scarlatti 150,Napoli,40.8478,14.2417,0812345678,false
+8,QuickSIM Box,Piazza Municipio,Napoli,40.8410,14.2532,,true
+9,Connessione Santa Croce,Via Ghibellina 80,Firenze,43.7687,11.2620,0558765432,false
+10,SmartPoint SMN,Piazza della Stazione,Firenze,43.7760,11.2486,,true
+11,WavePoint,Via Toledo 55,Napoli,40.8492,14.2541,0817654321,false
+12,SimBox Express,Piazza Garibaldi 3,Napoli,40.8530,14.2710,,true
+13,Urban Connect,Via Mazzini 22,Bologna,44.4949,11.3426,0512345678,false
+14,SelfSIM Corner,Stazione Centrale,Bologna,44.5050,11.3417,,true
+15,NextGen Mobile,Via Indipendenza 45,Bologna,44.4982,11.3430,0518765432,false
+16,QuickLine Hub,Piazza Maggiore,Bologna,44.4938,11.3426,,true
+17,Infinity Point,Via Sparano 10,Bari,41.1256,16.8674,0801234567,false
+18,Totem Facile,Piazza Aldo Moro,Bari,41.1166,16.8719,,true
+19,Digital Spot,Via Libertà 88,Palermo,38.1234,13.3567,0912345678,false
+20,FastSIM Kiosk,Stazione Centrale,Palermo,38.1157,13.3615,,true
+21,OpenLine,Via Emilia 77,Modena,44.6471,10.9252,0591234567,false
+22,Totem Emilia,Piazza Grande,Modena,44.6452,10.9252,,true
+23,CityConnect,Via Garibaldi 5,Genova,44.4113,8.9328,0101234567,false
+24,SimPoint Porto Antico,Porto Antico,Genova,44.4100,8.9290,,true
+25,Mobile Hub,Via Manzoni 12,Bergamo,45.6983,9.6773,0351234567,false
+26,Totem Stazione FS,Piazzale Marconi,Bergamo,45.6928,9.6744,,true
+27,EasyConnect,Via Roma 23,Verona,45.4384,10.9916,0451234567,false
+28,Totem Arena,Piazza Bra,Verona,45.4386,10.9921,,true
+29,LinkPoint,Via Dante 8,Padova,45.4064,11.8777,0491234567,false
+30,Totem Prato,Piazza Prato della Valle,Padova,45.3949,11.8763,,true
+31,SimCity,Via Po 14,Torino,45.0703,7.6869,0118765432,false
+32,Totem Lingotto,Via Nizza 230,Torino,45.0292,7.6616,,true
+33,MobileLab,Via Cavour 20,Firenze,43.7735,11.2558,0551234567,false
+34,Totem Novoli,Piazza Puccini,Firenze,43.7920,11.2222,,true
+35,Digital Center,Via Veneto 99,Roma,41.9109,12.4924,0645123456,false
+36,Totem Tiburtina,Piazza della Stazione Tiburtina,Roma,41.9100,12.5300,,true
+37,WaveLab,Via Garibaldi 18,Trieste,45.6500,13.7700,0401234567,false
+38,Totem Piazza Unità,Piazza Unità d'Italia,Trieste,45.6495,13.7768,,true
+39,SimHub,Via Mazzini 7,Parma,44.8015,10.3279,0521234567,false
+40,Totem Stazione Parma,Piazza Carlo Alberto Dalla Chiesa,Parma,44.8011,10.3277,,true
+41,Connecto,Via Garibaldi 21,Reggio Emilia,44.6989,10.6295,0522123456,false
+42,Totem Reggio,Piazza del Monte,Reggio Emilia,44.6981,10.6302,,true
+43,SimWave,Via Roma 5,Perugia,43.1107,12.3908,0751234567,false
+44,Totem Fontivegge,Piazza Vittorio Veneto,Perugia,43.1086,12.3747,,true
+45,MobileX,Via Mazzini 30,Pescara,42.4643,14.2142,0851234567,false
+46,Totem Stazione Centrale,Piazza della Repubblica,Pescara,42.4689,14.2161,,true
+47,LinkLab,Via Cavour 15,Ancona,43.6167,13.5189,0711234567,false
+48,Totem Porto,Piazza della Repubblica,Ancona,43.6178,13.5156,,true
+49,SimFast,Via Dante 22,Brescia,45.5416,10.2118,0301234567,false
+50,Totem Brescia Due,Piazza della Vittoria,Brescia,45.5399,10.2147,,true
+51,WaveConnect,Via Roma 44,Trento,46.0707,11.1211,0461123456,false
+52,Totem Stazione Trento,Piazza Dante,Trento,46.0702,11.1196,,true
+53,Digital Point,Via Carducci 9,Udine,46.0637,13.2362,0432123456,false
+54,Totem Udine,Piazza della Libertà,Udine,46.0647,13.2342,,true
+55,SimBox City,Via Roma 18,Aosta,45.7376,7.3172,0165123456,false
+56,Totem Aosta,Piazza Chanoux,Aosta,45.7372,7.3170,,true
+57,Mobile Spot,Via Mazzini 11,Cagliari,39.2238,9.1217,0701234567,false
+58,Totem Cagliari,Piazza Yenne,Cagliari,39.2167,9.1122,,true
+59,QuickConnect,Via Roma 7,Potenza,40.6418,15.8079,0971123456,false
+60,Totem Potenza,Piazza Mario Pagano,Potenza,40.6412,15.8082,,true
