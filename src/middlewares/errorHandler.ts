@@ -46,10 +46,10 @@ export function errorHandler(
         const response: ApiResponse<never> = {
             success: false,
             error: {
-                code: 'APP_ERROR',
+                code: err.statusCode === 404 ? "NOT_FOUND" : "APP_ERROR",
                 message: err.message,
-                ...(err.details && { details: err.details })
-            }
+                ...(err.details && { details: err.details }),
+            },
         };
 
         res.status(err.statusCode).json(response);
