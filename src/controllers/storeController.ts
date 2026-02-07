@@ -11,7 +11,10 @@ type CityRow = RowDataPacket & City;
 type CountRow = RowDataPacket & { total: number };
 
 // GET api/stores
-export const getStores = async (req: Request, res: Response): Promise<void> => {
+export const getStores = async (
+    req: Request,
+    res: Response
+): Promise<void> => {
     const { città, nome, totem, page, limit } = storeQuerySchema.parse(
         req.query,
     );
