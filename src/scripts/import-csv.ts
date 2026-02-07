@@ -1,8 +1,7 @@
 import { createReadStream } from "fs";
 import { parse } from "csv-parse";
 import { pool } from "../config/database.js";
-import type { StoreCsvRow } from "../schemas/store.schema.js";
-import { storeCsvRowSchema } from "../schemas/store.schema.js";
+import { storeCsvRowSchema, type StoreCsvRow } from "../schemas/store.schema.js";
 import { z, type ZodSafeParseResult } from "zod";
 
 export const parseRow = (row: unknown): ZodSafeParseResult<StoreCsvRow> => {
@@ -59,7 +58,7 @@ const importCsv = async (): Promise<void> => {
         }),
     );
 
-    console.log("Importazine in corso...");
+    console.log("Importazione in corso...");
 
     for await (const row of parser) {
         rowIndex++;
