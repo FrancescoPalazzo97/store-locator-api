@@ -1,12 +1,12 @@
 import type { Request, Response } from "express";
-import { storeQuerySchema, storeIdSchema, type StoreCsvRow } from "../schemas/store.schema.js";
+import { storeQuerySchema, storeIdSchema } from "../schemas/store.schema.js";
 import type { Store, City, PaginatedResponse } from "../types/store.types.js";
 import { successHandler } from "../utils/successHandler.js";
-import type { RowDataPacket, ResultSetHeader } from "mysql2";
+import type { RowDataPacket } from "mysql2";
 import { pool } from "../config/database.js";
 import { AppError } from "../middlewares/errorHandler.js";
 
-type StoreRow = RowDataPacket & StoreCsvRow;
+type StoreRow = RowDataPacket & Store;
 type CityRow = RowDataPacket & City;
 type CountRow = RowDataPacket & { total: number };
 
